@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "greenspark": {
+      "url": "https://docs.getgreenspark.com/mcp",
+      "headers": {
+        "x-api-key": "YOUR_SANDBOX_OR_PRODUCTION_API_KEY"
+      }
+    }
+  }
+}

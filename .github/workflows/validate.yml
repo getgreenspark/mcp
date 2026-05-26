@@ -1,0 +1,36 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Validate JSON files
+        run: |
+          jq empty server.json
+          for f in examples/*.json; do
+            jq empty "$f"
+          done
+
+      - name: Validate skill frontmatter
+        run: |
+          for skill in skills/*/SKILL.md; do
+            echo "Checking $skill"
+            head -n 1 "$skill" | grep -q '^---$'
+            grep -q '^name:' "$skill"
+            grep -q '^description:' "$skill"
+          done
+
+      - name: Check MCP URL consistency
+        run: |
+          grep -r 'docs.getgreenspark.com/mcp' README.md server.json examples/
+          ! grep -r 'greenspark.readme.io/mcp' README.md server.json examples/ skills/

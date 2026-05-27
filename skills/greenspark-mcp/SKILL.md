@@ -77,4 +77,4 @@ Use alongside:
 
 ## Client config
 
-See [examples/cursor-mcp.json](../../examples/cursor-mcp.json) in this repo. Prefer sandbox `x-api-key` for testing.
+See [examples/cursor-mcp.json](https://github.com/getgreenspark/mcp/blob/master/examples/cursor-mcp.json). Prefer sandbox `x-api-key` for testing.

@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "websiteUrl": "https://docs.getgreenspark.com",
   "repository": {
-    "url": "https://github.com/getgreenspark/greenspark-mcp",
+    "url": "https://github.com/getgreenspark/mcp",
     "source": "website"
   },
   "remotes": [

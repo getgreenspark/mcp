@@ -28,7 +28,7 @@ If validation fails on transport, confirm ReadMe uses `streamable-http` or `sse`
 Forms differ; usually submit:
 
 - MCP URL: `https://docs.getgreenspark.com/mcp`
-- Repository: `https://github.com/getgreenspark/greenspark-mcp`
+- Repository: `https://github.com/getgreenspark/mcp`
 - Documentation: `https://docs.getgreenspark.com`
 - Type: Remote / hosted
 

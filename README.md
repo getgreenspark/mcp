@@ -24,7 +24,7 @@ Use a **sandbox** key for testing. Setup guide: [docs.getgreenspark.com](https:/
 **2. Install skills** (optional):
 
 ```bash
-npx skills add getgreenspark/greenspark-mcp -a cursor -g -y
+npx skills add getgreenspark/mcp -a cursor -g -y
 ```
 
 More agents and single-skill installs: [skills/](skills/) · [skills.sh](https://skills.sh/)
@@ -43,8 +43,8 @@ Details: **greenspark-mcp** and **greenspark-auth-environments** in [skills/](sk
 
 ## Links
 
-| | |
-|---|---|
+| Resource | Link |
+|----------|------|
 | API docs | [docs.getgreenspark.com](https://docs.getgreenspark.com) |
 | Staying up to date | [docs/MAINTENANCE.md](docs/MAINTENANCE.md) |
 | Registry publishing | [docs/PUBLISHING.md](docs/PUBLISHING.md) (maintainers) |

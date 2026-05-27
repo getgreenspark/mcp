@@ -36,22 +36,9 @@ Documentation states: **Accepts all standard API key types** — individual rout
 
 ## MCP client config
 
-When the MCP client supports headers on the server URL:
+See [examples/cursor-mcp.json](https://github.com/getgreenspark/mcp/blob/master/examples/cursor-mcp.json). Prefer a sandbox `x-api-key` for testing.
 
-```json
-{
-  "mcpServers": {
-    "greenspark": {
-      "url": "https://docs.getgreenspark.com/mcp",
-      "headers": {
-        "x-api-key": "YOUR_SANDBOX_OR_PRODUCTION_API_KEY"
-      }
-    }
-  }
-}
-```
-
-If headers are not supported on the MCP URL, pass `x-api-key` when invoking `execute-request` against Greenspark API hosts.
+If your client does not support headers on the MCP URL, pass `x-api-key` when invoking `execute-request` against Greenspark API hosts.
 
 ## HTTP error map
 

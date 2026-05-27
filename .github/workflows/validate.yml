@@ -33,4 +33,4 @@ jobs:
       - name: Check MCP URL consistency
         run: |
           grep -r 'docs.getgreenspark.com/mcp' README.md server.json examples/
-          ! grep -r 'greenspark.readme.io/mcp' README.md server.json examples/ skills/
+          ! grep -r 'greenspark.readme.io/mcp' README.md server.json examples/ skills/ docs/

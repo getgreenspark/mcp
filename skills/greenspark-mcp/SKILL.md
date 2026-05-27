@@ -49,7 +49,7 @@ Schemas and routes come from OpenAPI **uploaded to ReadMe** — not from open-ap
 | Account | Yes | Prefer `getPublicAccountV2` — see **greenspark-account** |
 | Projects | Yes | See **greenspark-projects** |
 | Estimations | Docs only | `get-endpoint` only; not in MCP route toggles |
-| Email | Docs only | Use v2 routes; not in MCP route toggles |
+| Email | Docs only | `get-endpoint` only; not in MCP route toggles |
 | Billing | Docs only | Not in MCP route toggles |
 
 ## Recommended workflow
@@ -72,7 +72,7 @@ Use alongside:
 - **greenspark-auth-environments** — keys, hosts, 401/403/422
 - **greenspark-impact** — impact purchase ledger GET
 - **greenspark-reporting** — raw reports (`fetchRawReportV2`)
-- **greenspark-account** — public account v2
+- **greenspark-account** — public account (`getPublicAccountV2`)
 - **greenspark-projects** — project catalog
 
 ## Client config

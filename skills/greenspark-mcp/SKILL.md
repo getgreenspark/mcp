@@ -69,6 +69,7 @@ Schemas and routes come from OpenAPI **uploaded to ReadMe** — not from open-ap
 
 Use alongside:
 
+- **greenspark-integration-workflow** — how domains connect; typical integration flow (start here when building)
 - **greenspark-auth-environments** — keys, hosts, 401/403/422
 - **greenspark-impact** — impact purchase ledger GET
 - **greenspark-reporting** — raw reports (`fetchRawReportV2`)

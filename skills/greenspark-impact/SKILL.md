@@ -30,6 +30,12 @@ Impact **creation** (POST) is documented on ReadMe but **not executable via MCP 
 - Impact spec is **MCP-enabled** for GET ledger routes when toggled in ReadMe.
 - Read-only via MCP in v1.
 
+## Transparency (ledger responses)
+
+Purchase responses include proof that impact was delivered, notably **`receiptUrl`** and an **`evidences`** array (impact-type-specific proof such as planting sessions or plastic collection details). Use `get-endpoint` for the full `TransactionPurchase` schema.
+
+For how ledger fits into a full integration, see **greenspark-integration-workflow**.
+
 ## Agent guidance
 
 - For ledger or purchase history: use `getImpactPurchases` or `getImpactPurchase`.

@@ -39,7 +39,7 @@ Details: **greenspark-mcp** and **greenspark-auth-environments** in [skills/](sk
 
 ## Skills
 
-`greenspark-mcp` · `greenspark-auth-environments` · `greenspark-impact` · `greenspark-reporting` · `greenspark-account` · `greenspark-projects`
+`greenspark-mcp` · `greenspark-auth-environments` · `greenspark-integration-workflow` · `greenspark-impact` · `greenspark-reporting` · `greenspark-account` · `greenspark-projects`
 
 ## Links
 

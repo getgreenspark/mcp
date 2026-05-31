@@ -23,26 +23,15 @@ Apply **greenspark-mcp** and **greenspark-auth-environments** before live calls.
 | `getProjectMetadata` | Project metadata | GET; supplementary |
 | `getProjectStories` | Project stories | GET; supplementary |
 
-## Plan requirement
-
-`getProject` (single project detail) may return **403** unless the account has:
-
-- `premiumBusiness`
-- `premiumBusinessYearly`
-- `enterpriseBusiness`
-
-`getProjectCategories` and `getProjects` do not carry the same premium gate as `getProject` in the public API docs.
-
-If `getProject` fails with 403, explain plan upgrade — do not retry with a different key on the same account.
-
 ## MCP rules (v1)
 
 - Projects spec is **MCP-enabled** for GET routes when toggled in ReadMe.
 - Read-only via MCP in v1.
-- Typical flow: `getProjectCategories` → `getProjects` → optional `getProject` for detail.
+- Typical flow: `getProjectCategories` → `getProjects` (use query filters). Fetch by id via `getProject` only when you already have a `projectId`.
 
 ## Agent guidance
 
-- For "browse available projects": start with categories and list endpoints.
-- For "project detail": use `getProject`; warn about premium requirement if 403.
+- For "browse available projects": start with categories and `getProjects`; use **filters** on `getProjects` to narrow the catalog.
+- List and single-project responses share the same project shape — prefer list + filters for discovery.
 - Use sandbox key for catalog exploration.
+- Integration sequencing: **greenspark-integration-workflow**.

@@ -120,13 +120,15 @@ After creation, the public ledger proves Greenspark fulfilled the purchase.
 
 | operationId | Use |
 |-------------|-----|
-| `getImpactPurchase` | Single purchase by `purchaseId` from the create response |
-| `getImpactPurchases` | Browse or audit the ledger |
+| `getImpactPurchases` | Browse or audit the ledger; rows have no `evidences` |
+| `getImpactPurchase` | One ledger purchase with its `evidences`, by an `id` from `getImpactPurchases` |
+
+Ledger ids are Greenspark's bulk fulfilment purchase ids. The create response and reporting rows do not contain them, and their transaction ids return `404 PURCHASE_NOT_FOUND` here.
 
 Response highlights (see `get-endpoint` / [Impacts reference](https://docs.getgreenspark.com/reference/impacts.md)):
 
-- **`receiptUrl`** — receipt for the purchase
-- **`evidences`** — proof of on-the-ground impact (e.g. planting sessions, plastic collection metadata such as images and coordinates, depending on impact type)
+- **`receiptUrl`** — receipt for the purchase (list and single purchase)
+- **`evidences`** — proof of on-the-ground impact (e.g. planting sessions, plastic collection metadata such as images and coordinates, depending on impact type). Single purchase only.
 
 Use the ledger for trust UI, support, and debugging — especially when async reporting is not yet available. MCP v1 can call these GETs when enabled (**greenspark-impact**).
 
@@ -139,7 +141,7 @@ Before generating integration code:
 3. `execute-request` (optional): `getProjects` with representative filters.
 4. `execute-request` (optional): `getPublicAccountV2` with dashboard `publicAccountId`.
 5. `execute-request` (optional): narrow `fetchRawReportV2` sample.
-6. `execute-request` (optional): `getImpactPurchase` for a known `purchaseId`.
+6. `execute-request` (optional): `getImpactPurchase` for an `id` taken from `getImpactPurchases`.
 7. `get-endpoint` for your chosen Impact POST (`createImpact` or `createTailoredImpact`) — implement writes in app code only.
 
 ## Plan and quota gates

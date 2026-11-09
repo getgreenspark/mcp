@@ -32,11 +32,16 @@ Impact **creation** (POST) is documented on ReadMe but **not executable via MCP 
 
 ## Transparency (ledger responses)
 
-Purchase responses include proof that impact was delivered, notably **`receiptUrl`** and an **`evidences`** array (impact-type-specific proof such as planting sessions or plastic collection details). Use `get-endpoint` for the full `TransactionPurchase` schema.
+Ledger purchases are Greenspark's bulk fulfilment purchases with partners. Their ids are not the transaction ids from impact creation or reporting rows.
+
+- `getImpactPurchases` returns `TransactionPurchaseSummary` rows: id, type, amount, project, provider, period and **`receiptUrl`**. It carries **no `evidences`**.
+- `getImpactPurchase` returns one `TransactionPurchase` with the **`evidences`** array (impact-type-specific proof such as planting sessions or plastic collection details). Pass an `id` taken from `getImpactPurchases`.
+
+Use `get-endpoint` for the full schemas.
 
 For how ledger fits into a full integration, see **greenspark-integration-workflow**.
 
 ## Agent guidance
 
-- For ledger or purchase history: use `getImpactPurchases` or `getImpactPurchase`.
+- For ledger or purchase history: use `getImpactPurchases`. For a purchase's evidence, call `getImpactPurchase` with an `id` from that list.
 - Prefer sandbox for exploratory reads.
